@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Jetpack</string>
+
+    <!--  Function  -->
+    <string name="encrypted_file">Encrypted File</string>
+
 </resources>
