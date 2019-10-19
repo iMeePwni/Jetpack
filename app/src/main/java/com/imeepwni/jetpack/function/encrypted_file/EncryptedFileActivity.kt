@@ -24,11 +24,11 @@ class EncryptedFileActivity : BaseActivity() {
 
     private fun initView() {
         btn_read_file.setOnClickListener {
-            toast("test: ${SharedPreferencesUtil.getString("test", "default")}")
+            toast("security: ${SharedPreferencesUtil.getString("security", "default")}")
         }
         btn_commit_input.setOnClickListener {
             et_input_words.getTrimText().let {
-                SharedPreferencesUtil.putString("test", it)
+                SharedPreferencesUtil.putString("security", it)
             }
         }
     }
