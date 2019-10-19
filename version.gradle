@@ -1,8 +1,8 @@
 ext {
-
     ktxVersion = "1.1.0"
+    security_version = "1.0.0-alpha02"
 
     androidJetpack = [ktxCore    : "androidx.core:core-ktx:$ktxVersion",
-                      ktxFragment: "androidx.fragment:fragment-ktx:$ktxVersion"]
-
+                      ktxFragment: "androidx.fragment:fragment-ktx:$ktxVersion",
+                      security   : "androidx.security:security-crypto:$security_version"]
 }

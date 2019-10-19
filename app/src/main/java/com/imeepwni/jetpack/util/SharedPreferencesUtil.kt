@@ -1,7 +1,8 @@
 package com.imeepwni.jetpack.util
 
-import android.content.Context.MODE_PRIVATE
 import androidx.core.content.edit
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKeys
 import com.imeepwni.jetpack.app.app
 
 /**
@@ -10,9 +11,22 @@ import com.imeepwni.jetpack.app.app
  */
 private const val SP_NAME = "app"
 
+// Although you can define your own key generation parameter specification, it's
+// recommended that you use the value specified here.
+private val keyGenParameterSpec = MasterKeys.AES256_GCM_SPEC
+private val masterKeyAlias = MasterKeys.getOrCreate(keyGenParameterSpec)
+
 object SharedPreferencesUtil {
 
-    private val preferences by lazy { app.getSharedPreferences(SP_NAME, MODE_PRIVATE) }
+    private val preferences by lazy {
+        EncryptedSharedPreferences.create(
+            SP_NAME,
+            masterKeyAlias,
+            app,
+            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+        )
+    }
 
     fun putBoolean(key: String, value: Boolean) {
         preferences.edit {

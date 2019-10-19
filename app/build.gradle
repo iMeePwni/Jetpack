@@ -35,6 +35,9 @@ dependencies {
     implementation androidJetpack.ktxCore
     implementation androidJetpack.ktxFragment
 
+    // Security
+    implementation androidJetpack.security
+
     //    Test
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
