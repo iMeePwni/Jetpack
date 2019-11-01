@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseActivity
+import com.imeepwni.jetpack.app.toast
 import com.imeepwni.jetpack.data.User
 import com.imeepwni.jetpack.databinding.ActivityDataBindingBinding
 
@@ -18,6 +19,13 @@ class DataBindingActivity : BaseActivity() {
 
         val binding = DataBindingUtil.setContentView<ActivityDataBindingBinding>(this, R.layout.activity_data_binding)
 
-        binding.user = User(firstName = "JoJo", lastName = "Lee")
+        with(binding) {
+            user = User(firstName = "JoJo", lastName = "Lee")
+            handlers = object : MyHandler {
+                override fun onToastUserDetailClick() {
+                    toast(user.toString())
+                }
+            }
+        }
     }
 }

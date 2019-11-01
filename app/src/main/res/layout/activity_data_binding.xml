@@ -8,6 +8,10 @@
         <variable
             name="user"
             type="com.imeepwni.jetpack.data.User" />
+
+        <variable
+            name="handlers"
+            type="com.imeepwni.jetpack.function.data_binding.MyHandler" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,7 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_label_first_name" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tv_last_name"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,6 +64,19 @@
             app:layout_constraintStart_toEndOf="@+id/tv_label_last_name"
             app:layout_constraintTop_toTopOf="@+id/tv_label_last_name"
             tools:text="Snow" />
+
+        <Button
+            android:id="@+id/btn_toast_user_detail"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{()-> handlers.onToastUserDetailClick()}"
+            android:text="@string/toast_detail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
