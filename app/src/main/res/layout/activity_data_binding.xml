@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.imeepwni.jetpack.data.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_label_first_name"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/first_name"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_first_name"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{user.firstName}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_label_first_name"
+            app:layout_constraintStart_toEndOf="@+id/tv_label_first_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_label_first_name"
+            tools:text="John" />
+
+        <TextView
+            android:id="@+id/tv_label_last_name"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/last_name"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="@+id/tv_label_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_first_name" />
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{user.lastName}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_label_last_name"
+            app:layout_constraintStart_toEndOf="@+id/tv_label_last_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_label_last_name"
+            tools:text="Snow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
