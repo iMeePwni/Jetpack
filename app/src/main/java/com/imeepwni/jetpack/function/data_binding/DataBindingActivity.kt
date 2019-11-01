@@ -20,6 +20,9 @@ class DataBindingActivity : BaseActivity() {
         val binding = DataBindingUtil.setContentView<ActivityDataBindingBinding>(this, R.layout.activity_data_binding)
 
         with(binding) {
+            users = UserRepository.getRandomUsers()
+            // TODO remove, only for test
+            toast(users.toString())
             user = User(firstName = "JoJo", lastName = "Lee")
             handlers = object : MyHandler {
                 override fun onToastUserDetailClick() {

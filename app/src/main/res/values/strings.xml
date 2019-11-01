@@ -13,5 +13,21 @@
     <string name="first_name">First Name:</string>
     <string name="last_name">Last Name:</string>
     <string name="toast_detail">Toast Detail</string>
+    <string name="adult">Adult</string>
+
+    <string-array name="random_name">
+        <item>Joe</item>
+        <item>John</item>
+        <item>Jane</item>
+        <item>Jim</item>
+        <item>Jack</item>
+        <item>Jar</item>
+        <item>Storm</item>
+        <item>Stack</item>
+        <item>Alia</item>
+        <item>Beck</item>
+        <item>Clion</item>
+        <item>David</item>
+    </string-array>
 
 </resources>

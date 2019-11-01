@@ -6,5 +6,6 @@ package com.imeepwni.jetpack.data
  */
 data class User(
     val firstName: String,
-    val lastName: String
+    val lastName: String,
+    var isAdult: Boolean = false
 )
