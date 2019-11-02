@@ -7,4 +7,8 @@ package com.imeepwni.jetpack.function.data_binding
 interface MyHandler {
 
     fun onToastUserDetailClick()
+
+    fun onNextUserClick()
+
+    fun onPreviousUserClick()
 }

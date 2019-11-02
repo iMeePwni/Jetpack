@@ -5,7 +5,6 @@ import androidx.databinding.DataBindingUtil
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseActivity
 import com.imeepwni.jetpack.app.toast
-import com.imeepwni.jetpack.data.User
 import com.imeepwni.jetpack.databinding.ActivityDataBindingBinding
 
 /**
@@ -19,12 +18,22 @@ class DataBindingActivity : BaseActivity() {
 
         val binding = DataBindingUtil.setContentView<ActivityDataBindingBinding>(this, R.layout.activity_data_binding)
 
+        val randomUsers = UserRepository.getRandomUsers()
         with(binding) {
-            users = UserRepository.getRandomUsers()
-            // TODO remove, only for test
-            toast(users.toString())
-            user = User(firstName = "JoJo", lastName = "Lee")
+            users = randomUsers
+            user = randomUsers.first()
             handlers = object : MyHandler {
+
+                private fun currentUserIndex() = user?.let { randomUsers.indexOf(it) } ?: 0
+
+                override fun onNextUserClick() {
+                    user = randomUsers[(currentUserIndex() + 1) % randomUsers.size]
+                }
+
+                override fun onPreviousUserClick() {
+                    user = randomUsers[(currentUserIndex() - 1) % randomUsers.size]
+                }
+
                 override fun onToastUserDetailClick() {
                     toast(user.toString())
                 }
