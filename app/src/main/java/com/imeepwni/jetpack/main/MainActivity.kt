@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.data.JetPackFunction
+import com.imeepwni.jetpack.function.data_binding.DataBindingActivity
 import com.imeepwni.jetpack.function.encrypted_file.EncryptedFileActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,9 +25,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initData() {
-        jetPackFunctions.add(JetPackFunction(getString(R.string.encrypted_file)) {
-            startActivity(Intent(this, EncryptedFileActivity::class.java))
-        })
+        with(jetPackFunctions) {
+            add(JetPackFunction(getString(R.string.encrypted_file)) {
+                startActivity(Intent(this@MainActivity, EncryptedFileActivity::class.java))
+            })
+            add(JetPackFunction(getString(R.string.data_binding)) {
+                startActivity(Intent(this@MainActivity, DataBindingActivity::class.java))
+            })
+        }
     }
 
     private fun initView() {

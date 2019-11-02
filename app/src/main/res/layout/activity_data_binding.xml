@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="java.util.List" />
+
+        <import type="com.imeepwni.jetpack.data.User" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.imeepwni.jetpack.data.User" />
+
+        <variable
+            name="users"
+            type="List&lt;User>" />
+
+        <variable
+            name="twoWayCheckStatus"
+            type="Boolean" />
+
+        <variable
+            name="handlers"
+            type="com.imeepwni.jetpack.function.data_binding.MyHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_label_first_name"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/first_name"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_first_name"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{user.firstName}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_label_first_name"
+            app:layout_constraintStart_toEndOf="@+id/tv_label_first_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_label_first_name"
+            tools:text="John" />
+
+        <TextView
+            android:id="@+id/tv_label_last_name"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/last_name"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="@+id/tv_label_first_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_first_name" />
+
+        <TextView
+            android:id="@+id/tv_last_name"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{user.lastName}"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_label_last_name"
+            app:layout_constraintStart_toEndOf="@+id/tv_label_last_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_label_last_name"
+            tools:text="Snow" />
+
+        <TextView
+            android:id="@+id/tv_adult"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/adult"
+            android:textColor="@android:color/black"
+            android:visibility="@{user.isAdult ? View.VISIBLE : View.GONE}"
+            app:layout_constraintStart_toStartOf="@+id/tv_label_last_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_last_name" />
+
+        <Button
+            android:id="@+id/btn_toast_user_detail"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{()-> handlers.onToastUserDetailClick()}"
+            android:text="@string/toast_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_last_name" />
+
+        <Button
+            android:id="@+id/btn_next_user"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> handlers.onNextUserClick()}"
+            android:text="@string/next_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_previous_user"
+            app:layout_constraintTop_toBottomOf="@+id/btn_toast_user_detail" />
+
+        <Button
+            android:id="@+id/btn_previous_user"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:onClick="@{() -> handlers.onPreviousUserClick()}"
+            android:text="@string/previous_user"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_next_user"
+            app:layout_constraintEnd_toStartOf="@+id/btn_next_user"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_next_user" />
+
+        <CheckBox
+            android:id="@+id/cb_two_way_binding_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:checked="@={twoWayCheckStatus}"
+            android:text="@string/two_way_binding_test"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_previous_user"
+            tools:checked="true" />
+
+        <Button
+            android:id="@+id/btn_show_two_way_check_status"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> handlers.onShowCheckStatusClick()}"
+            android:text="@string/show_check_status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_next_user" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
