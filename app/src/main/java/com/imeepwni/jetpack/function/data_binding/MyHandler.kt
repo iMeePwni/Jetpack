@@ -11,4 +11,6 @@ interface MyHandler {
     fun onNextUserClick()
 
     fun onPreviousUserClick()
+
+    fun onShowCheckStatusClick()
 }

@@ -22,6 +22,7 @@ class DataBindingActivity : BaseActivity() {
         with(binding) {
             users = randomUsers
             user = randomUsers.first()
+            twoWayCheckStatus = false
             handlers = object : MyHandler {
 
                 private fun currentUserIndex() = user?.let { randomUsers.indexOf(it) } ?: 0
@@ -36,6 +37,10 @@ class DataBindingActivity : BaseActivity() {
 
                 override fun onToastUserDetailClick() {
                     toast(user.toString())
+                }
+
+                override fun onShowCheckStatusClick() {
+                    toast(twoWayCheckStatus.toString())
                 }
             }
         }
