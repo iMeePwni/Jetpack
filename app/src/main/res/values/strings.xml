@@ -18,6 +18,7 @@
     <string name="previous_user">Previous User</string>
     <string name="two_way_binding_test">Two Way Binding Test</string>
     <string name="show_check_status">Show Check Status</string>
+    <string name="lifecycles">Lifecycles</string>
 
     <string-array name="random_name">
         <item>Joe</item>

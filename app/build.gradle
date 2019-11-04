@@ -43,9 +43,13 @@ dependencies {
     // Security
     implementation androidJetpack.security
 
-    //    Test
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:rules:1.2.0'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    // Test
+    testImplementation androidJetpack.junit
+    androidTestImplementation androidJetpack.rules
+    androidTestImplementation androidJetpack.runner
+    androidTestImplementation androidJetpack.espresso
+
+    // Lifecycles
+    // AndroidX libraries use this lightweight import for Lifecycle. (AndroidX auto import)
+    //    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
 }
