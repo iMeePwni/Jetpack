@@ -10,6 +10,7 @@ import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.data.JetPackFunction
 import com.imeepwni.jetpack.function.data_binding.DataBindingActivity
 import com.imeepwni.jetpack.function.encrypted_file.EncryptedFileActivity
+import com.imeepwni.jetpack.function.lifecycles.LifecyclesActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +32,9 @@ class MainActivity : AppCompatActivity() {
             })
             add(JetPackFunction(getString(R.string.data_binding)) {
                 startActivity(Intent(this@MainActivity, DataBindingActivity::class.java))
+            })
+            add(JetPackFunction(getString(R.string.lifecycles)) {
+                startActivity(Intent(this@MainActivity, LifecyclesActivity::class.java))
             })
         }
     }

@@ -24,9 +24,14 @@
         <activity
             android:name=".function.encrypted_file.EncryptedFileActivity"
             android:label="@string/encrypted_file" />
+
         <activity
             android:name=".function.data_binding.DataBindingActivity"
             android:label="@string/data_binding" />
+
+        <activity
+            android:name=".function.lifecycles.LifecyclesActivity"
+            android:label="@string/lifecycles" />
     </application>
 
 </manifest>
