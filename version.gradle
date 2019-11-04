@@ -1,8 +1,13 @@
 ext {
-    ktxVersion = "1.1.0"
+    ktx_version = "1.1.0"
     security_version = "1.0.0-alpha02"
+    espresso_version = "3.2.0"
 
-    androidJetpack = [ktxCore    : "androidx.core:core-ktx:$ktxVersion",
-                      ktxFragment: "androidx.fragment:fragment-ktx:$ktxVersion",
-                      security   : "androidx.security:security-crypto:$security_version"]
+    androidJetpack = [ktxCore    : "androidx.core:core-ktx:$ktx_version",
+                      ktxFragment: "androidx.fragment:fragment-ktx:$ktx_version",
+                      security   : "androidx.security:security-crypto:$security_version",
+                      junit      : "junit:junit:4.12",
+                      rules      : "androidx.test:rules:1.2.0",
+                      runner     : "androidx.test:runner:1.2.0",
+                      espresso   : "androidx.test.espresso:espresso-core:$espresso_version"]
 }
