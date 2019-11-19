@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -52,4 +54,8 @@ dependencies {
     // Lifecycles
     // AndroidX libraries use this lightweight import for Lifecycle. (AndroidX auto import)
     //    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+
+    // Navigation
+    implementation androidJetpack.nav_fragment
+    implementation androidJetpack.nav_ui
 }
