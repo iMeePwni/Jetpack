@@ -2,9 +2,10 @@ package com.imeepwni.jetpack.function.data_binding
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseActivity
-import com.imeepwni.jetpack.app.toast
+import com.imeepwni.jetpack.data.User
 import com.imeepwni.jetpack.databinding.ActivityDataBindingBinding
 
 /**
@@ -17,32 +18,11 @@ class DataBindingActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         val binding = DataBindingUtil.setContentView<ActivityDataBindingBinding>(this, R.layout.activity_data_binding)
+        val viewModel = MyViewModel()
+        binding.viewModel = viewModel
 
-        val randomUsers = UserRepository.getRandomUsers()
-        with(binding) {
-            users = randomUsers
-            user = randomUsers.first()
-            twoWayCheckStatus = false
-            handlers = object : MyHandler {
-
-                private fun currentUserIndex() = user?.let { randomUsers.indexOf(it) } ?: 0
-
-                override fun onNextUserClick() {
-                    user = randomUsers[(currentUserIndex() + 1) % randomUsers.size]
-                }
-
-                override fun onPreviousUserClick() {
-                    user = randomUsers[(currentUserIndex() - 1) % randomUsers.size]
-                }
-
-                override fun onToastUserDetailClick() {
-                    toast(user.toString())
-                }
-
-                override fun onShowCheckStatusClick() {
-                    toast(twoWayCheckStatus.toString())
-                }
-            }
-        }
+        viewModel.mUser.observe(this, Observer<User> {
+            binding.user = it
+        })
     }
 }

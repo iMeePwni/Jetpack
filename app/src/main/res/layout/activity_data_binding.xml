@@ -16,16 +16,8 @@
             type="com.imeepwni.jetpack.data.User" />
 
         <variable
-            name="users"
-            type="List&lt;User>" />
-
-        <variable
-            name="twoWayCheckStatus"
-            type="Boolean" />
-
-        <variable
-            name="handlers"
-            type="com.imeepwni.jetpack.function.data_binding.MyHandler" />
+            name="viewModel"
+            type="com.imeepwni.jetpack.function.data_binding.MyViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -97,7 +89,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:onClick="@{()-> handlers.onToastUserDetailClick()}"
+            android:onClick="@{()-> viewModel.onToastUserDetailClick()}"
             android:text="@string/toast_detail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_label_last_name" />
@@ -109,7 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:onClick="@{() -> handlers.onNextUserClick()}"
+            android:onClick="@{() -> viewModel.onNextUserClick()}"
             android:text="@string/next_user"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -122,7 +114,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:onClick="@{() -> handlers.onPreviousUserClick()}"
+            android:onClick="@{() -> viewModel.onPreviousUserClick()}"
             android:text="@string/previous_user"
             app:layout_constraintBottom_toBottomOf="@+id/btn_next_user"
             app:layout_constraintEnd_toStartOf="@+id/btn_next_user"
@@ -136,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:checked="@={twoWayCheckStatus}"
+            android:checked="@={viewModel.twoWayCheckStatus}"
             android:text="@string/two_way_binding_test"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_previous_user"
@@ -149,7 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:onClick="@{() -> handlers.onShowCheckStatusClick()}"
+            android:onClick="@{() -> viewModel.onShowCheckStatusClick()}"
             android:text="@string/show_check_status"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_next_user" />
