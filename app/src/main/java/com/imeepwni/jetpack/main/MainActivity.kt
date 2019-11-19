@@ -11,6 +11,7 @@ import com.imeepwni.jetpack.data.JetPackFunction
 import com.imeepwni.jetpack.function.data_binding.DataBindingActivity
 import com.imeepwni.jetpack.function.encrypted_file.EncryptedFileActivity
 import com.imeepwni.jetpack.function.lifecycles.LifecyclesActivity
+import com.imeepwni.jetpack.function.navigation.NavigationActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +36,9 @@ class MainActivity : AppCompatActivity() {
             })
             add(JetPackFunction(getString(R.string.lifecycles)) {
                 startActivity(Intent(this@MainActivity, LifecyclesActivity::class.java))
+            })
+            add(JetPackFunction(getString(R.string.navigation)) {
+                startActivity(Intent(this@MainActivity, NavigationActivity::class.java))
             })
         }
     }

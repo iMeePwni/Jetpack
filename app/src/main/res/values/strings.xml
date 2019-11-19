@@ -2,6 +2,10 @@
     <string name="app_name">Jetpack</string>
 
     <!--  Function  -->
+    <string name="data_binding">Data Binding</string>
+    <string name="lifecycles">Lifecycles</string>
+    <string name="navigation">Navigation</string>
+
     <!--  Encrypted File  -->
     <string name="encrypted_file">Encrypted File</string>
     <string name="read_encrypted_file">Read Encrypted File</string>
@@ -9,7 +13,6 @@
     <string name="commit">Commit</string>
 
     <!--  Data Binding  -->
-    <string name="data_binding">Data Binding</string>
     <string name="first_name">First Name:</string>
     <string name="last_name">Last Name:</string>
     <string name="toast_detail">Toast Detail</string>
@@ -18,7 +21,6 @@
     <string name="previous_user">Previous User</string>
     <string name="two_way_binding_test">Two Way Binding Test</string>
     <string name="show_check_status">Show Check Status</string>
-    <string name="lifecycles">Lifecycles</string>
 
     <string-array name="random_name">
         <item>Joe</item>

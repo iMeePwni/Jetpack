@@ -32,6 +32,10 @@
         <activity
             android:name=".function.lifecycles.LifecyclesActivity"
             android:label="@string/lifecycles" />
+
+        <activity
+            android:name=".function.navigation.NavigationActivity"
+            android:label="@string/navigation" />
     </application>
 
 </manifest>
