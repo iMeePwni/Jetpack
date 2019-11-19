@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseFragment
-import com.imeepwni.jetpack.app.toast
 import kotlinx.android.synthetic.main.fragment_navigation.*
 
 /**
@@ -21,10 +21,12 @@ class NavigationFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         btn_plant.setOnClickListener {
-            toast("Plant")
+            val action = NavigationFragmentDirections.actionNavigationFragmentToPlantFragment()
+            it.findNavController().navigate(action)
         }
         btn_animal.setOnClickListener {
-            toast("Animal")
+            val action = NavigationFragmentDirections.actionNavigationFragmentToAnimalFragment()
+            it.findNavController().navigate(action)
         }
     }
 }

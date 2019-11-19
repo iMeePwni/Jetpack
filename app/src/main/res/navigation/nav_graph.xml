@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigationFragment">
+
+    <fragment
+        android:id="@+id/navigationFragment"
+        android:name="com.imeepwni.jetpack.function.navigation.NavigationFragment"
+        android:label="NavigationFragment"
+        tools:layout="@layout/fragment_navigation">
+        <action
+            android:id="@+id/action_navigationFragment_to_plantFragment"
+            app:destination="@id/plantFragment" />
+        <action
+            android:id="@+id/action_navigationFragment_to_animalFragment"
+            app:destination="@id/animalFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/animalFragment"
+        android:name="com.imeepwni.jetpack.function.navigation.animal.AnimalFragment"
+        android:label="AnimalFragment"
+        tools:layout="@layout/fragment_animal" />
+
+    <fragment
+        android:id="@+id/plantFragment"
+        android:name="com.imeepwni.jetpack.function.navigation.plant.PlantFragment"
+        android:label="PlantFragment"
+        tools:layout="@layout/fragment_plant" />
+</navigation>
