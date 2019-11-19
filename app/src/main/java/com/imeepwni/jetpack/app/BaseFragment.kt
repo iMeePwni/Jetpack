@@ -1,0 +1,10 @@
+package com.imeepwni.jetpack.app
+
+import androidx.fragment.app.Fragment
+
+/**
+ * 作者：Created by guofeng on 2019/11/19
+ * 邮箱：feng.guo@bees360.com
+ */
+abstract class BaseFragment : Fragment() {
+}
