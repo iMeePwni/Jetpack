@@ -4,9 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseFragment
+import com.imeepwni.jetpack.function.navigation.NavigationFragmentDirections.Companion.actionNavigationFragmentToAnimalFragment
+import com.imeepwni.jetpack.function.navigation.NavigationFragmentDirections.Companion.actionNavigationFragmentToPlantFragment
+import com.imeepwni.jetpack.function.navigation.NavigationFragmentDirections.Companion.actionNavigationFragmentToSearchFragment
 import kotlinx.android.synthetic.main.fragment_navigation.*
 
 /**
@@ -21,12 +25,17 @@ class NavigationFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         btn_plant.setOnClickListener {
-            val action = NavigationFragmentDirections.actionNavigationFragmentToPlantFragment()
-            it.findNavController().navigate(action)
+            actionNavigationFragmentToPlantFragment().run(::navigate)
         }
         btn_animal.setOnClickListener {
-            val action = NavigationFragmentDirections.actionNavigationFragmentToAnimalFragment()
-            it.findNavController().navigate(action)
+            actionNavigationFragmentToAnimalFragment().run(::navigate)
         }
+        btn_search_dialog.setOnClickListener {
+            actionNavigationFragmentToSearchFragment().run(::navigate)
+        }
+    }
+
+    private fun navigate(action: NavDirections) {
+        findNavController().navigate(action)
     }
 }

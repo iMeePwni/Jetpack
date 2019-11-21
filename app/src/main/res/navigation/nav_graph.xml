@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_navigationFragment_to_animalFragment"
             app:destination="@id/animalFragment" />
+        <action
+            android:id="@+id/action_navigationFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
 
     <fragment
@@ -29,4 +32,9 @@
         android:name="com.imeepwni.jetpack.function.navigation.plant.PlantFragment"
         android:label="PlantFragment"
         tools:layout="@layout/fragment_plant" />
+
+    <dialog
+        android:id="@+id/searchFragment"
+        android:name="com.imeepwni.jetpack.function.navigation.SearchFragment"
+        android:label="SearchFragment" />
 </navigation>
