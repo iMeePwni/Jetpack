@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.imeepwni.jetpack.data.JetPackFunction
 
@@ -16,9 +17,9 @@ class SimpleItemViewHolder private constructor(itemView: View) : RecyclerView.Vi
     var mTVTitle: TextView = itemView.findViewById(android.R.id.text1)
 
     fun bind(jetPackFunction: JetPackFunction) {
-        mTVTitle.text = jetPackFunction.name
+        mTVTitle.setText(jetPackFunction.name)
         mTVTitle.setOnClickListener {
-            jetPackFunction.callback.invoke()
+            it.findNavController().navigate(jetPackFunction.action)
         }
     }
 
