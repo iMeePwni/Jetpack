@@ -18,12 +18,14 @@ import kotlinx.android.synthetic.main.fragment_navigation.*
  */
 class NavigationFragment : BaseFragment() {
 
+    private val plants = listOf("Apple", "Orange", "Banana")
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_navigation, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        actionNavigationFragmentToPlantFragment()
+        actionNavigationFragmentToPlantFragment(plants.shuffled().first())
                 .let(::createNavigateOnClickListener)
                 .let { btn_plant.setOnClickListener(it) }
 

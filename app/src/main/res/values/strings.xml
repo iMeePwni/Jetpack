@@ -22,11 +22,6 @@
     <string name="two_way_binding_test">Two Way Binding Test</string>
     <string name="show_check_status">Show Check Status</string>
 
-    <!--  Navigation  -->
-    <string name="plant">Plant</string>
-    <string name="animal">Animal</string>
-    <string name="search">Search</string>
-
     <string-array name="random_name">
         <item>Joe</item>
         <item>John</item>
@@ -41,5 +36,13 @@
         <item>Clion</item>
         <item>David</item>
     </string-array>
+
+    <!--  Navigation  -->
+    <string name="plant">Plant</string>
+    <string name="animal">Animal</string>
+    <string name="search">Search</string>
+
+    <!--  Plant fragment  -->
+    <string name="arg_plant_name">plant_name</string>
 
 </resources>
