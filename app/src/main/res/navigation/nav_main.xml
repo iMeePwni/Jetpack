@@ -26,6 +26,12 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <activity
@@ -49,4 +55,14 @@
         android:name="com.imeepwni.jetpack.function.navigation.NavigationActivity"
         android:label="activity_navigation"
         tools:layout="@layout/activity_navigation" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.imeepwni.jetpack.function.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.imeepwni.jetpack.function.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
