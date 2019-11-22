@@ -16,10 +16,18 @@
         tools:layout="@layout/fragment_navigation">
         <action
             android:id="@+id/action_navigationFragment_to_plantFragment"
-            app:destination="@id/plantFragment" />
+            app:destination="@id/plantFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_navigationFragment_to_animalFragment"
-            app:destination="@id/animalFragment" />
+            app:destination="@id/animalFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_navigationFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
