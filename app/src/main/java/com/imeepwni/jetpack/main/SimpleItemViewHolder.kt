@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.navigation.findNavController
+import androidx.navigation.Navigation.createNavigateOnClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.imeepwni.jetpack.data.JetPackFunction
 
@@ -18,18 +18,16 @@ class SimpleItemViewHolder private constructor(itemView: View) : RecyclerView.Vi
 
     fun bind(jetPackFunction: JetPackFunction) {
         mTVTitle.setText(jetPackFunction.name)
-        mTVTitle.setOnClickListener {
-            it.findNavController().navigate(jetPackFunction.action)
-        }
+        jetPackFunction.action.let(::createNavigateOnClickListener)
+                .let { mTVTitle.setOnClickListener(it) }
     }
 
     companion object {
 
         fun create(parent: ViewGroup): SimpleItemViewHolder {
             return LayoutInflater.from(parent.context)
-                    .inflate(android.R.layout.simple_list_item_1, parent, false).let {
-                        SimpleItemViewHolder(it)
-                    }
+                    .inflate(android.R.layout.simple_list_item_1, parent, false)
+                    .let(::SimpleItemViewHolder)
         }
     }
 }
