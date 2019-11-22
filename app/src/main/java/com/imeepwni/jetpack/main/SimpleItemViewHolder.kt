@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.Navigation.createNavigateOnClickListener
 import androidx.recyclerview.widget.RecyclerView
-import com.imeepwni.jetpack.data.JetPackFunction
+import com.imeepwni.jetpack.data.bean.JetPackFunction
 
 /**
  * 作者：Created by guofeng on 2019/10/10

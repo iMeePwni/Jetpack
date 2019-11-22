@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseFragment
-import com.imeepwni.jetpack.data.JetPackFunction
+import com.imeepwni.jetpack.data.bean.JetPackFunction
 import com.imeepwni.jetpack.main.MainFragmentDirections.Companion.actionMainFragmentToDataBindingActivity
 import com.imeepwni.jetpack.main.MainFragmentDirections.Companion.actionMainFragmentToEncryptedFileActivity
 import com.imeepwni.jetpack.main.MainFragmentDirections.Companion.actionMainFragmentToLifecyclesActivity

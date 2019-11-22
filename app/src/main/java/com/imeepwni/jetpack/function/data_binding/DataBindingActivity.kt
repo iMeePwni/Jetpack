@@ -5,7 +5,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseActivity
-import com.imeepwni.jetpack.data.User
+import com.imeepwni.jetpack.data.bean.User
 import com.imeepwni.jetpack.databinding.ActivityDataBindingBinding
 
 /**

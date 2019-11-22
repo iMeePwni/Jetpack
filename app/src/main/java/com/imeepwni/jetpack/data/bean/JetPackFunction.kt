@@ -1,4 +1,4 @@
-package com.imeepwni.jetpack.data
+package com.imeepwni.jetpack.data.bean
 
 import androidx.annotation.StringRes
 import androidx.navigation.NavDirections

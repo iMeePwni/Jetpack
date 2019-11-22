@@ -3,7 +3,7 @@ package com.imeepwni.jetpack.function.data_binding
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.imeepwni.jetpack.data.User
+import com.imeepwni.jetpack.data.bean.User
 
 /**
  * 作者：Created by guofeng on 2019/11/19

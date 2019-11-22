@@ -5,7 +5,7 @@ import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseActivity
 import com.imeepwni.jetpack.app.getTrimText
 import com.imeepwni.jetpack.app.toast
-import com.imeepwni.jetpack.util.SharedPreferencesUtil
+import com.imeepwni.jetpack.data.shared_preferences.SharedPreferencesUtil
 import kotlinx.android.synthetic.main.activity_encrypted_file.*
 
 /**
