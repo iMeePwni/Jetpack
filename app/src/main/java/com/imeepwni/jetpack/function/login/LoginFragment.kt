@@ -8,6 +8,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation.createNavigateOnClickListener
 import androidx.navigation.fragment.findNavController
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseFragment
@@ -37,6 +38,10 @@ class LoginFragment : BaseFragment() {
         btn_login.setOnClickListener {
             viewModel.authenticate(binding.name.orEmpty(), binding.password.orEmpty())
         }
+
+        LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+                .let(::createNavigateOnClickListener)
+                .let { tv_sign_up.setOnClickListener(it) }
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
