@@ -45,4 +45,7 @@
     <!--  Plant fragment  -->
     <string name="arg_plant_name">plant_name</string>
 
+    <!--  Loop Fragment  -->
+    <string name="loop">Loop</string>
+
 </resources>

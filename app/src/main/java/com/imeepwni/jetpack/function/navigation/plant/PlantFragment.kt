@@ -27,7 +27,12 @@ class PlantFragment : BaseFragment() {
 
         tv_plant.text = args.StringArgPlantName
 
-        PlantFragmentDirections.actionGlobalSearchFragment().let(::createNavigateOnClickListener)
+        PlantFragmentDirections.actionGlobalSearchFragment()
+                .let(::createNavigateOnClickListener)
                 .let { btn_search.setOnClickListener(it) }
+
+        PlantFragmentDirections.actionPlantFragmentToLoopFragment()
+                .let(::createNavigateOnClickListener)
+                .let { btn_loop.setOnClickListener(it) }
     }
 }

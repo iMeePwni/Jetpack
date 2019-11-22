@@ -47,11 +47,25 @@
         <argument
             android:name="@string/arg_plant_name"
             app:argType="string" />
+        <action
+            android:id="@+id/action_plantFragment_to_loopFragment"
+            app:destination="@id/loopFragment" />
     </fragment>
 
     <dialog
         android:id="@+id/searchFragment"
         android:name="com.imeepwni.jetpack.function.navigation.SearchFragment"
         android:label="SearchFragment" />
+    <fragment
+        android:id="@+id/loopFragment"
+        android:name="com.imeepwni.jetpack.function.navigation.loop.LoopFragment"
+        android:label="LoopFragment"
+        tools:layout="@layout/fragment_loop">
+        <action
+            android:id="@+id/action_loopFragment_to_navigationFragment"
+            app:destination="@id/navigationFragment"
+            app:popUpTo="@id/navigationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 </navigation>
