@@ -13,7 +13,9 @@ import com.imeepwni.jetpack.data.bean.JetPackFunction
 import com.imeepwni.jetpack.main.MainFragmentDirections.Companion.actionMainFragmentToDataBindingActivity
 import com.imeepwni.jetpack.main.MainFragmentDirections.Companion.actionMainFragmentToEncryptedFileActivity
 import com.imeepwni.jetpack.main.MainFragmentDirections.Companion.actionMainFragmentToLifecyclesActivity
+import com.imeepwni.jetpack.main.MainFragmentDirections.Companion.actionMainFragmentToLoginFragment
 import com.imeepwni.jetpack.main.MainFragmentDirections.Companion.actionMainFragmentToNavigationActivity
+import com.imeepwni.jetpack.main.MainFragmentDirections.Companion.actionMainFragmentToProfileFragment
 import kotlinx.android.synthetic.main.fragment_main.*
 
 /**
@@ -38,7 +40,10 @@ class MainFragment : BaseFragment() {
         jetPackFunctions = listOf(JetPackFunction(R.string.encrypted_file, actionMainFragmentToEncryptedFileActivity()),
                 JetPackFunction(R.string.data_binding, actionMainFragmentToDataBindingActivity()),
                 JetPackFunction(R.string.lifecycles, actionMainFragmentToLifecyclesActivity()),
-                JetPackFunction(R.string.navigation, actionMainFragmentToNavigationActivity()))
+                JetPackFunction(R.string.navigation, actionMainFragmentToNavigationActivity()),
+                JetPackFunction(R.string.login, actionMainFragmentToLoginFragment()),
+                JetPackFunction(R.string.profile, actionMainFragmentToProfileFragment())
+        )
     }
 
     private fun initView() {

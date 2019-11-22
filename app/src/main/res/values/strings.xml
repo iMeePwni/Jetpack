@@ -6,6 +6,8 @@
     <string name="data_binding">Data Binding</string>
     <string name="lifecycles">Lifecycles</string>
     <string name="navigation">Navigation</string>
+    <string name="login">Login</string>
+    <string name="profile">Profile</string>
 
     <!--  Encrypted File  -->
     <string name="read_encrypted_file">Read Encrypted File</string>
@@ -47,5 +49,7 @@
 
     <!--  Loop Fragment  -->
     <string name="loop">Loop</string>
+    <string name="label_user_name">User Name:</string>
+    <string name="label_password">Password:</string>
 
 </resources>
