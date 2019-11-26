@@ -46,6 +46,8 @@
 
     <!--  Plant fragment  -->
     <string name="arg_plant_name">plant_name</string>
+    <string name="do_you_like_x">"Do you like %1$s?"</string>
+    <string name="whisper_it_to_you">Whisper it to you</string>
 
     <!--  Loop Fragment  -->
     <string name="loop">Loop</string>
