@@ -46,7 +46,9 @@
         tools:layout="@layout/fragment_plant">
         <argument
             android:name="@string/arg_plant_name"
-            app:argType="string" />
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
         <action
             android:id="@+id/action_plantFragment_to_loopFragment"
             app:destination="@id/loopFragment" />
