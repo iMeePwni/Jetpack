@@ -29,7 +29,10 @@ class PlantFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        tv_plant.text = getString(R.string.do_you_like_x, args.StringArgPlantName)
+        binding.question = getString(R.string.do_you_like_x, args.StringArgPlantName)
+        PlantFragmentDirections.actionPlantFragmentToAnswerDialog(binding.question!!)
+                .let(::createNavigateOnClickListener)
+                .let { btn_answer.setOnClickListener(it) }
 
         PlantFragmentDirections.actionGlobalSearchFragment()
                 .let(::createNavigateOnClickListener)
