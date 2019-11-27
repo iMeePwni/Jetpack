@@ -2,17 +2,26 @@ package com.imeepwni.jetpack.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.onNavDestinationSelected
 import com.imeepwni.jetpack.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        NavigationUI.setupWithNavController(toolbar, findNavController(R.id.fragment))
+        navController = findNavController(R.id.fragment)
+        NavigationUI.setupWithNavController(toolbar, navController)
+
+        toolbar.setOnMenuItemClickListener {
+            it.onNavDestinationSelected(navController)
+        }
     }
 }
