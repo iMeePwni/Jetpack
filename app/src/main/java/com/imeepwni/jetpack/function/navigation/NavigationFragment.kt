@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.fragment_navigation.*
 class NavigationFragment : BaseFragment() {
 
     private val plants = listOf("Apple", "Orange", "Banana")
+    private val animals = listOf("Ant", "Tiger", "Lion", "Elephant")
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_navigation, container, false)
@@ -29,7 +30,7 @@ class NavigationFragment : BaseFragment() {
                 .let(::createNavigateOnClickListener)
                 .let { btn_plant.setOnClickListener(it) }
 
-        actionNavigationFragmentToAnimalFragment()
+        actionNavigationFragmentToAnimalFragment(animals.shuffled().first())
                 .let(::createNavigateOnClickListener)
                 .let { btn_animal.setOnClickListener(it) }
 
