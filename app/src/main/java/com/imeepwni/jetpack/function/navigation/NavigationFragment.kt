@@ -9,6 +9,7 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseFragment
+import com.imeepwni.jetpack.app.toast
 import com.imeepwni.jetpack.function.navigation.NavigationFragmentDirections.Companion.actionNavigationFragmentToPlantFragment
 import com.imeepwni.jetpack.function.navigation.NavigationFragmentDirections.Companion.actionNavigationFragmentToSearchFragment
 import com.imeepwni.jetpack.function.navigation.animal.AnimalFragmentArgs
@@ -42,6 +43,12 @@ class NavigationFragment : BaseFragment() {
         actionNavigationFragmentToSearchFragment()
                 .let(::createNavigateOnClickListener)
                 .let { btn_search_dialog.setOnClickListener(it) }
+
+        findNavController().addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.plantFragment -> toast("Welcome to PlantFragment")
+            }
+        }
     }
 
 }
