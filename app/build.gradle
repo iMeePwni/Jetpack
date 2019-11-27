@@ -65,4 +65,7 @@ dependencies {
     // Navigation
     implementation androidJetpack.nav_fragment
     implementation androidJetpack.nav_ui
+
+    // ViewPager2
+    implementation androidJetpack.view_pager_2
 }
