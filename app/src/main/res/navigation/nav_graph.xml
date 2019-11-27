@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_navigationFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_navigationFragment_to_nav_tab"
+            app:destination="@id/nav_tab" />
     </fragment>
 
     <fragment
@@ -90,5 +93,6 @@
             android:name="question"
             app:argType="string" />
     </dialog>
+    <include app:graph="@navigation/nav_tab" />
 
 </navigation>

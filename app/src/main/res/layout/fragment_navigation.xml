@@ -41,4 +41,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_search_dialog" />
+
+    <Button
+        android:id="@+id/btn_tab"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_animal" />
 </androidx.constraintlayout.widget.ConstraintLayout>

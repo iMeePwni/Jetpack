@@ -60,4 +60,7 @@
     <!--  Register Fragment  -->
     <string name="about">About</string>
 
+    <!--  Tab Fragment  -->
+    <string name="tab">Tab</string>
+
 </resources>

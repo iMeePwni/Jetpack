@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseFragment
 import com.imeepwni.jetpack.app.toast
+import com.imeepwni.jetpack.function.navigation.NavigationFragmentDirections.Companion.actionNavigationFragmentToNavTab
 import com.imeepwni.jetpack.function.navigation.NavigationFragmentDirections.Companion.actionNavigationFragmentToPlantFragment
 import com.imeepwni.jetpack.function.navigation.NavigationFragmentDirections.Companion.actionNavigationFragmentToSearchFragment
 import com.imeepwni.jetpack.function.navigation.animal.AnimalFragmentArgs
@@ -48,6 +49,10 @@ class NavigationFragment : BaseFragment() {
             when (destination.id) {
                 R.id.plantFragment -> toast("Welcome to PlantFragment")
             }
+        }
+
+        btn_tab.setOnClickListener {
+            findNavController().navigate(actionNavigationFragmentToNavTab())
         }
     }
 
