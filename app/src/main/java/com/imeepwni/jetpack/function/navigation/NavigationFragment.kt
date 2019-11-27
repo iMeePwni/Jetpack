@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation.createNavigateOnClickListener
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.BaseFragment
-import com.imeepwni.jetpack.function.navigation.NavigationFragmentDirections.Companion.actionNavigationFragmentToAnimalFragment
 import com.imeepwni.jetpack.function.navigation.NavigationFragmentDirections.Companion.actionNavigationFragmentToPlantFragment
 import com.imeepwni.jetpack.function.navigation.NavigationFragmentDirections.Companion.actionNavigationFragmentToSearchFragment
+import com.imeepwni.jetpack.function.navigation.animal.AnimalFragmentArgs
 import kotlinx.android.synthetic.main.fragment_navigation.*
 
 /**
@@ -30,9 +32,12 @@ class NavigationFragment : BaseFragment() {
                 .let(::createNavigateOnClickListener)
                 .let { btn_plant.setOnClickListener(it) }
 
-        actionNavigationFragmentToAnimalFragment(animals.shuffled().first())
-                .let(::createNavigateOnClickListener)
-                .let { btn_animal.setOnClickListener(it) }
+        val toBundle = AnimalFragmentArgs(animals.shuffled().first()).toBundle()
+        val extras = FragmentNavigatorExtras(btn_animal to getString(R.string.animal))
+
+        btn_animal.setOnClickListener {
+            findNavController().navigate(R.id.animalFragment, toBundle, null, extras)
+        }
 
         actionNavigationFragmentToSearchFragment()
                 .let(::createNavigateOnClickListener)
