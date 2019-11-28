@@ -4,6 +4,7 @@ ext {
     espresso_version = "3.2.0"
     nav_version = "2.1.0"
     view_pager_2_version = "1.0.0-beta04"
+    material_version = '1.2.0-alpha02'
 
     androidJetpack = [ktxCore     : "androidx.core:core-ktx:$ktx_version",
                       ktxFragment : "androidx.fragment:fragment-ktx:$ktx_version",
@@ -14,5 +15,6 @@ ext {
                       espresso    : "androidx.test.espresso:espresso-core:$espresso_version",
                       nav_fragment: "androidx.navigation:navigation-fragment-ktx:$nav_version",
                       nav_ui      : "androidx.navigation:navigation-ui-ktx:$nav_version",
-                      view_pager_2: "androidx.viewpager2:viewpager2:$view_pager_2_version"]
+                      view_pager_2: "androidx.viewpager2:viewpager2:$view_pager_2_version",
+                      material: "com.google.android.material:material:$material_version"]
 }
