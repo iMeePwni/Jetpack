@@ -1,4 +1,4 @@
-package com.imeepwni.jetpack.util
+package com.imeepwni.jetpack.data.shared_preferences
 
 import androidx.core.content.edit
 import androidx.security.crypto.EncryptedSharedPreferences
@@ -20,8 +20,8 @@ object SharedPreferencesUtil {
 
     private val preferences by lazy {
         EncryptedSharedPreferences.create(
-            SP_NAME,
-            masterKeyAlias,
+                SP_NAME,
+                masterKeyAlias,
             app,
             EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
             EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM

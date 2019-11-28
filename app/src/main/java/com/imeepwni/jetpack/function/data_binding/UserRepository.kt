@@ -2,7 +2,7 @@ package com.imeepwni.jetpack.function.data_binding
 
 import com.imeepwni.jetpack.R
 import com.imeepwni.jetpack.app.app
-import com.imeepwni.jetpack.data.User
+import com.imeepwni.jetpack.data.bean.User
 import kotlin.random.Random
 
 /**

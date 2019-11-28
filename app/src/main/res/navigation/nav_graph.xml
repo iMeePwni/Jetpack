@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigationFragment">
+
+    <action
+        android:id="@+id/action_global_searchFragment"
+        app:destination="@id/searchFragment" />
+
+    <fragment
+        android:id="@+id/navigationFragment"
+        android:name="com.imeepwni.jetpack.function.navigation.NavigationFragment"
+        android:label="NavigationFragment"
+        tools:layout="@layout/fragment_navigation">
+        <action
+            android:id="@+id/action_navigationFragment_to_plantFragment"
+            app:destination="@id/plantFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigationFragment_to_animalFragment"
+            app:destination="@id/animalFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigationFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_navigationFragment_to_nav_tab"
+            app:destination="@id/nav_tab" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/animalFragment"
+        android:name="com.imeepwni.jetpack.function.navigation.animal.AnimalFragment"
+        android:label="AnimalFragment"
+        tools:layout="@layout/fragment_animal">
+        <deepLink
+            android:id="@+id/deepLink"
+            android:autoVerify="true"
+            app:uri="www.jetpack.com.cn/{animal_name}" />
+        <argument
+            android:name="animal_name"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/plantFragment"
+        android:name="com.imeepwni.jetpack.function.navigation.plant.PlantFragment"
+        android:label="PlantFragment"
+        tools:layout="@layout/fragment_plant">
+        <argument
+            android:name="@string/arg_plant_name"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_plantFragment_to_loopFragment"
+            app:destination="@id/loopFragment" />
+        <action
+            android:id="@+id/action_plantFragment_to_answerDialog"
+            app:destination="@id/answerDialog" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/searchFragment"
+        android:name="com.imeepwni.jetpack.function.navigation.SearchFragment"
+        android:label="SearchFragment" />
+
+    <fragment
+        android:id="@+id/loopFragment"
+        android:name="com.imeepwni.jetpack.function.navigation.loop.LoopFragment"
+        android:label="LoopFragment"
+        tools:layout="@layout/fragment_loop">
+        <action
+            android:id="@+id/action_loopFragment_to_navigationFragment"
+            app:destination="@id/navigationFragment"
+            app:popUpTo="@id/navigationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/answerDialog"
+        android:name="com.imeepwni.jetpack.function.navigation.plant.AnswerDialog"
+        android:label="AnswerDialog">
+        <argument
+            android:name="question"
+            app:argType="string" />
+    </dialog>
+    <include app:graph="@navigation/nav_tab" />
+
+</navigation>

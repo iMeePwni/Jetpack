@@ -7,13 +7,13 @@
 
         <import type="java.util.List" />
 
-        <import type="com.imeepwni.jetpack.data.User" />
+        <import type="com.imeepwni.jetpack.data.bean.User" />
 
         <import type="android.view.View" />
 
         <variable
             name="user"
-            type="com.imeepwni.jetpack.data.User" />
+            type="com.imeepwni.jetpack.data.bean.User" />
 
         <variable
             name="viewModel"
