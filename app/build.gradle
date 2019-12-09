@@ -70,4 +70,8 @@ dependencies {
 
     // ViewPager2
     implementation androidJetpack.view_pager_2
+
+    // WorkManager
+    implementation androidJetpack.work_manager
+    androidTestImplementation androidJetpack.work_manager_test
 }
